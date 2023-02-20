@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import TodoInput from "./components/todoInput";
 
 function App() {
+
+  const [input, setInput] = useState("");
+
+  const buttonclick = () => {
+    alert(input);
+    setInput("");
+  }
+
+  const handleOnChange = (event: any) => {
+    setInput(event.target.value);
+  }
+
   return (
     <div className="App">
       <section>
-      <h1>Todo List</h1>
-      <TodoInput/>
+        <h1>Todo List</h1>
+        <input type="text" value={input} onChange={handleOnChange}/>
+        <button onClick={buttonclick}>add</button>
       </section>
     </div>
   )
