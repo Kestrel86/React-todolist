@@ -1,0 +1,71 @@
+body {
+    background-color: #121212;
+  }
+  
+section {
+  margin: auto;
+  width: 300px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 30px;
+}
+
+#addInput {
+  width: 20em;
+}
+
+#addButton {
+  cursor: pointer;
+}
+
+#taskContainer {
+  list-style-type: none;
+  width: auto;
+  height: auto;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+#inputContainer {
+  align-items: center;
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  background-color: lightgray;
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+span {
+  font-size: large;
+  color: black;
+}
+
+#delButton {
+  border: none;
+  font-size: large;
+  background: none;
+  cursor: pointer;
+}
+
+#clearButton {
+  cursor: pointer;
+  width: 100px;
+}
+
+#checkBox {
+  text-align: right;
+  cursor: pointer;
+  position: relative;
+  right: 270px;
+}
