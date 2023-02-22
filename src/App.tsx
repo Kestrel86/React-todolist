@@ -5,6 +5,7 @@ import { ITask } from './interfaces';
 function App() {  
     const [input, setInput] = useState<string>("");
     const [tasks, setTasks] = useState<ITask[]>([]);
+    let count = 0;
 
     const handleClick = () => {
         if(input.trim() === "") {
@@ -29,10 +30,15 @@ function App() {
         setInput("");
     }
 
-    const completeTask = (delTask: any): void => {
+    const completeTask = (id: any): void => {
+      /*
         setTasks(tasks.filter((input) => {
             return input.taskName != delTask;
         }))
+        */
+       const newList = tasks.filter((item) => item.id !== id);
+
+       setTasks(newList);
     }
 
     const clearAll = () => {
@@ -66,11 +72,11 @@ function App() {
                     <button id="clearButton" onClick={clearAll}>Clear All</button>
                 </div>
                 <ul id='taskContainer'>
-                    {tasks.map((input: ITask) => {
+                    {tasks.map((item) => {
                         return (
-                        <li>
-                            <button id="delButton" onClick={() => completeTask(input.taskName)}>X</button>
-                            <span onClick={strikeText}>{input.taskName}</span>
+                        <li key={item.id}>
+                            <button id="delButton" onClick={() => completeTask(item.id)}>X</button>
+                            <span onClick={strikeText}>{item.taskName}</span>
                             <div></div>
                         </li>
                         )
