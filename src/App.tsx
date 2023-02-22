@@ -23,12 +23,13 @@ function App() {
     const addTask = () => {
         let newTask = {
             taskName: input,
+            id: Math.floor(Math.random() * 100)
         };
         setTasks([...tasks, newTask]);
         setInput("");
     }
 
-    const completeTask = (delTask: string): void => {
+    const completeTask = (delTask: any): void => {
         setTasks(tasks.filter((input) => {
             return input.taskName != delTask;
         }))
